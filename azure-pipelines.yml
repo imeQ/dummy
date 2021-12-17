@@ -1,0 +1,31 @@
+# Starter pipeline
+- task: AzureRmWebAppDeployment@4
+  inputs:
+    ConnectionType: 'AzureRM'
+    azureSubscription: 'Azure subscription 1 (c9a52b5c-9f6e-4413-8294-024766799744)'
+    appType: 'webAppContainer'
+    WebAppName: 'back1'
+    deployToSlotOrASE: true
+    ResourceGroupName: 'pipe-test'
+    SlotName: 'back1-green'
+    DockerNamespace: 'imeq/whoami:latest'
+    DockerRepository: 'imeq/whoami:latest'
+    AppSettings: '-VERSION 7.8.9'
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- script: echo Hello, world!
+  displayName: 'Run a one-line script'
+
+- script: |
+    echo Add other tasks to build, test, and deploy your project.
+    echo See https://aka.ms/yaml
+  displayName: 'Run a multi-line script'
