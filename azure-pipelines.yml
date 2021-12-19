@@ -1,7 +1,4 @@
-
-- task: AzureAppServiceSettings@1
+- task: BatchScript@1
   inputs:
-    azureSubscription: 'Azure subscription 1 (c9a52b5c-9f6e-4413-8294-024766799744)'
-    appName: 'back1'
-    resourceGroupName: 'pipe-test'
-    slotName: 'back1-green'
+    filename: 'ls'
+
